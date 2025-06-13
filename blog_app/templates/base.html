@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Mi Blog</h1>
+    <nav>
+        <a href="{% url 'inicio' %}">Inicio</a> |
+        <a href="{% url 'crear_post' %}">Crear Post</a> |
+        <a href="{% url 'crear_categoria' %}">Crear Categoría</a> |
+        <form action="{% url 'buscar_publicaciones' %}" method="get" style="display:inline;">
+            <input type="text" name="q" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    <hr>
+    {% block contenido %}{% endblock %}
+</body>
+</html>

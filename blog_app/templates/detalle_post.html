@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>{{ publicacion.titulo }}</h2>
+<p>{{ publicacion.contenido }}</p>
+
+<h3>Comentarios:</h3>
+<ul>
+    {% for comentario in comentarios %}
+        <li><strong>{{ comentario.nombre_autor }}:</strong> {{ comentario.contenido }}</li>
+    {% empty %}
+        <li>No hay comentarios.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'crear_comentario' publicacion.id %}">Agregar comentario</a>
+{% endblock %}

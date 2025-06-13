@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>Comentar en: {{ publicacion.titulo }}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <button type="submit">Enviar comentario</button>
+</form>
+{% endblock %}
