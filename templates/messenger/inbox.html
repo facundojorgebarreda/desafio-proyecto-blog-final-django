@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Inbox</h1>
+<a href="{% url 'message_new' %}">New message</a>
+<ul>
+  {% for msg in object_list %}
+    <li><b>{{ msg.sender.username }}</b>: {{ msg.body }} ({{ msg.sent_at|date:"Y-m-d H:i" }})</li>
+  {% empty %}
+    <li>No messages</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p>{{ object.subtitle }}</p>
+{{ object.body|safe }}
+{% if object.image %}
+  <img src="{{ object.image.url }}">
+{% endif %}
+{% endblock %}
